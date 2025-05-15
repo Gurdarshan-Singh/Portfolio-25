@@ -23,7 +23,7 @@ const navItems = [
   { label: 'Projects', path: '/projects' },
   { label: 'Skills', path: '/skills' },
   { label: 'Contact', path: '/contact' },
-  { label: 'Resume', path: '/resume' },
+  { label: 'Resume', path: '/resume' , download:true},
 ];
 
 
@@ -85,18 +85,28 @@ function Navbar(props) {
           >
             Gurdarshan Singh
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
+          {navItems.map((item) => (
+            item.label === 'Resume' ? (
+              <Button
+                key={item.label}
+                component="a"
+                href={item.path}
+                download
+                sx={{ display: { xs: 'none', sm: 'block' } , color:"white"}}
+              >
+                {item.label}
+              </Button>
+            ) : (
               <Button
                 key={item.label}
                 component={Link}
                 to={item.path}
-                sx={{ color: '#fff' }}
+                sx={{ display: { xs: 'none', sm: 'block' } , color:"white"}}
               >
                 {item.label}
               </Button>
-            ))}
-          </Box>
+            )
+          ))}
         </Toolbar>
       </AppBar>
       <nav>
