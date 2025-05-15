@@ -5,12 +5,6 @@ import SkillsDetails from "../CustomComponent/SkillsDetails";
 
 export default function SkillsHero() {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center", // Centers the content horizontally
-      }}
-    >
       <HeroContainer title="Skills">
         <SkillsDetails title="Programming & Scripting Languages">
           <Images
@@ -158,6 +152,5 @@ export default function SkillsHero() {
           />
         </SkillsDetails>
       </HeroContainer>
-    </Box>
   );
 }

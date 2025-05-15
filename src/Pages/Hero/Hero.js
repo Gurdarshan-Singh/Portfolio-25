@@ -6,6 +6,9 @@ import Front from '../../Components/Hero/Body/Front';
 import Footer from '../../Components/Hero/Footer/Footer';
 import AboutHero from '../../Components/About/AboutHero';
 import SkillsHero from '../../Components/Skills/SkillsHero';
+import ProjectHero from '../../Components/Projects/ProjectHero';
+import Contact from '../../Components/Contact/Contact';
+import ContactHero from '../../Components/Contact/ContactHero';
 
 // Create a dark theme
 const darkTheme = createTheme({
@@ -61,6 +64,8 @@ export default function Hero() {
           <Front />
           <AboutHero />
           <SkillsHero />
+          <ProjectHero />
+          <ContactHero />
         </div>
 
         {/* Footer */}

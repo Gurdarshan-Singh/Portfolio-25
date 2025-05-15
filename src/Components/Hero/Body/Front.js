@@ -11,26 +11,30 @@ function Front() {
         flexDirection: { xs: "column", sm: "row" }, // Stacks on small screens
         alignItems: "center", // Center content vertically
         // backgroundColor: "grey.900",
-        background:'transparent',
+        background: "transparent",
         color: "white",
         paddingX: { xs: 2, sm: 10 }, // Scalable padding on different screen sizes
         paddingY: 10,
       }}
     >
-
       {/* Left Side: Text Content */}
-      <Container maxWidth="md" 
-      sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
+      <Container
+        maxWidth="md"
+        sx={{ flex: 1, display: "flex", flexDirection: "column" }}
+      >
         {/* Animated Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Typography variant="h3" fontWeight="bold"
-           sx={{
+          <Typography
+            variant="h3"
+            fontWeight="bold"
+            sx={{
               fontSize: { xs: "2rem", sm: "3rem", md: "4rem" }, // Responsive font size
-            }}>
+            }}
+          >
             Hi, I'm Gurdarshan Singh
           </Typography>
         </motion.div>
@@ -41,57 +45,65 @@ function Front() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Typography variant="h6" sx={{
+          <Typography
+            variant="h6"
+            sx={{
               mt: 2,
               fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" }, // Responsive font size for subtitle
-            }}>
-            Full Stack Developer | Cloud Architect | AI Enthusiast 
+            }}
+          >
+            Full Stack Developer | Cloud Architect | AI Enthusiast
           </Typography>
           <Button
-          variant="contained"
-          sx={{
-            mt: 3,
-            backgroundColor: "black",
-            color: "white",
-            border: "1px solid white", // Fixed border style
-            "&:hover": {
-              backgroundColor: "grey.800", // Slight hover effect
-            },
-          }}
-          href="mailto:gurdarshan681@gmail.com"
-        >
-          Contact Me
-        </Button>
+            variant="contained"
+            sx={{
+              mt: 3,
+              backgroundColor: "black",
+              color: "white",
+              border: "1px solid white", // Fixed border style
+              "&:hover": {
+                backgroundColor: "grey.800", // Slight hover effect
+              },
+            }}
+            href="mailto:gurdarshan681@gmail.com"
+          >
+            Contact Me
+          </Button>
         </motion.div>
       </Container>
       {/* Right Side: Image Placeholder */}
-      <Container sx={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
-  <Box
-    sx={{
-      width: { xs: 250, sm: 400 }, // Scales image size based on screen size
-      height: { xs: 250, sm: 400 }, // Scales image size based on screen size
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: "50%", // Makes it circular
-      overflow: "hidden", // Ensures the image fits in the circle
-      border: "8px solid white", // Adds a circular border around the image
-    }}
-  >
-    <img
-      src="me.png" // Replace with your image path or URL
-      alt="Gurdarshan Singh"
-      style={{
-        width: "100%", // Ensures the image fills the circle
-        height: "100%",
-        objectFit: "cover", // Ensures the image covers the entire area
-      }}
-    />
-  </Box>
-</Container>
-
+      <Container
+        sx={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: { xs: 250, sm: 400 }, // Scales image size based on screen size
+            height: { xs: 250, sm: 400 }, // Scales image size based on screen size
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "50%", // Makes it circular
+            overflow: "hidden", // Ensures the image fits in the circle
+            border: "8px solid white", // Adds a circular border around the image
+          }}
+        >
+          <img
+            src="me.png" // Replace with your image path or URL
+            alt="Gurdarshan Singh"
+            style={{
+              width: "100%", // Ensures the image fills the circle
+              height: "100%",
+              objectFit: "cover", // Ensures the image covers the entire area
+            }}
+          />
+        </Box>
+      </Container>
     </Box>
-
   );
 }
 

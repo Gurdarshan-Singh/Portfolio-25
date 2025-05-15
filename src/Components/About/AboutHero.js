@@ -4,14 +4,6 @@ import HeroContainer from "../CustomComponent/HeroContainer";
 
 export default function AboutHero() {
   return (
-    <Box
-      display="flex"
-      flexDirection="row"
-      alignItems="center"
-      textAlign="center"
-      py={5}
-      px={10}
-    >
       <HeroContainer title="About Me">
         {/* Description */}
         <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -27,6 +19,5 @@ export default function AboutHero() {
           </Typography>
         </Box>
       </HeroContainer>
-    </Box>
   );
 }

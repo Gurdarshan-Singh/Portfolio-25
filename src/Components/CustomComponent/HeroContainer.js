@@ -1,9 +1,18 @@
 import React from "react";
 import { Container } from "@mui/material";
 import { Typography } from "@mui/material";
+import {Box } from "@mui/material";
 
 const HeroContainer = ({ children ,title}) => {
   return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center", // Centers the content horizontally
+      }}
+      py={5}
+      px={2}
+    >
     <Container
       sx={{
         backdropFilter: "blur(12px)", // Stronger blur effect
@@ -24,6 +33,7 @@ const HeroContainer = ({ children ,title}) => {
         </Typography>
       {children}
     </Container>
+    </Box>
   );
 };
 
