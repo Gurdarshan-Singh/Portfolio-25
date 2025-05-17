@@ -2,8 +2,19 @@ import React from 'react'
 import ContactHero from '../../Components/Contact/ContactHero'
 import { Box, Typography, TextField, Button } from '@mui/material'
 import HeroContainer from '../../Components/CustomComponent/HeroContainer'
+import { useState } from 'react'
 
 export default function Contact() {
+    const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSendEmail = () => {
+    const subject = encodeURIComponent(`Message from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+    window.location.href = `mailto:gurdarshan681@gmail.com?subject=${subject}&body=${body}`;
+  };
   return (
     <Box mt={10}>
     <Typography variant='h2'>
@@ -50,25 +61,51 @@ export default function Contact() {
             I'd love to hear from you! Whether it's a project, idea, or just to say hello.
           </Typography>
 
-          <TextField label="Name" variant="outlined" fullWidth required />
-          <TextField label="Email" variant="outlined" type="email" fullWidth required />
-          <TextField label="Message" variant="outlined" multiline rows={4} fullWidth required />
-
-          <Button
-          href=""
-          sx={{
-            backgroundColor: "white",
-            color: "black",
-            fontWeight: "bold", // Makes text bold
-            transition: "transform 0.3s ease, background-color 0.3s ease",
-            "&:hover": {
-              transform: "scale(1.1)", // Scale up slightly
-              backgroundColor: "#f0f0f0", // Light hover background
-            },
-          }}
-        >
-          Send Message
-        </Button>
+           <TextField
+        label="Name"
+        variant="outlined"
+        fullWidth
+        required
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        sx={{ mb: 2 }}
+      />
+      <TextField
+        label="Email"
+        variant="outlined"
+        type="email"
+        fullWidth
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        sx={{ mb: 2 }}
+      />
+      <TextField
+        label="Message"
+        variant="outlined"
+        multiline
+        rows={4}
+        fullWidth
+        required
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        sx={{ mb: 2 }}
+      />
+      <Button
+        onClick={handleSendEmail}
+        sx={{
+          backgroundColor: "white",
+          color: "black",
+          fontWeight: "bold",
+          transition: "transform 0.3s ease, background-color 0.3s ease",
+          "&:hover": {
+            transform: "scale(1.1)",
+            backgroundColor: "#f0f0f0",
+          },
+        }}
+      >
+        Send Message
+      </Button>
         </Box>
       </Box>
     </HeroContainer>

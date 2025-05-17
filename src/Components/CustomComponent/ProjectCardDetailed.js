@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import MyButton from './MyButton';
+import { light } from '@mui/material/styles/createPalette';
 
 export default function ProjectsList({ projects }) {
   return (
@@ -23,11 +24,11 @@ export default function ProjectsList({ projects }) {
         <Card
           key={idx}
           sx={{
-            height: 250, // 🔒 Fix the height of all cards
             display: 'flex',
             maxWidth: 800,
             width: '100%',          // Make card fill parent container width
             minHeight: 200,         // Minimum height so card doesn't shrink too much vertically
+            flexDirection: { xs: 'column', sm: 'row' }, // 👈 Responsive layout
           }}
         >
           <CardMedia
@@ -60,7 +61,7 @@ export default function ProjectsList({ projects }) {
               </Typography>
             </CardContent>
             <Box mx={2} my={2}>
-              <MyButton name="Explore"/>
+              <MyButton name="Explore" link={project.link}/>
             </Box>
           </Box>
         </Card>
