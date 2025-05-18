@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Avatar, Divider} from "@mui/material";
 import HeroContainer from "../../Components/CustomComponent/HeroContainer";
-import MyButton from "../../Components/CustomComponent/MyButton";
+import {Button} from "@mui/material";
 
 export default function About() {
   return (
@@ -102,7 +102,24 @@ export default function About() {
 
         <Divider sx={{ my: 4 }} />
         {/* Resume Button */}
-        <MyButton name="View Resume" />
+        <Button
+      component="a"       // Render as <a> to support download attribute
+      href="Gurdarshan_Singh_Resume"
+      download            // This tells browser to download the file
+      size="small"
+      sx={{
+        backgroundColor: "white",
+        color: "black",
+        fontWeight: "bold",
+        transition: "transform 0.3s ease, background-color 0.3s ease",
+        "&:hover": {
+          transform: "scale(1.1)",
+          backgroundColor: "#f0f0f0",
+        },
+      }}
+    >
+    View Resume
+    </Button>
       </HeroContainer>
     </Box>
   );

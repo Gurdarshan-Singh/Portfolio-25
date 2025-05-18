@@ -1,5 +1,4 @@
 import React from 'react'
-import ContactHero from '../../Components/Contact/ContactHero'
 import { Box, Typography, TextField, Button } from '@mui/material'
 import HeroContainer from '../../Components/CustomComponent/HeroContainer'
 import { useState } from 'react'
